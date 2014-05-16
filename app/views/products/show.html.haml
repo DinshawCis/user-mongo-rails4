@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+	%b Name:
+	= @product.name
+%p
+	%b Description:
+	= @product.description
+%p
+	%b Price:
+	= @product.price
+/ %p
+/ 	%b picture
+/ 	- @product.pictures.each do |picture|
+/ 		= image_tag picture.attachment, :width => "50", :height =>"50"
+
+%p
+	%b comment
+	%br
+	- @product.comments.each do |picture|
+		= picture.name
+		= picture.content
+		%br
+
+
+= form_for [@user, @product, Comment.new] do |f|
+	%p
+		= f.label :name
+		= f.text_field :name
+	%p
+		= f.label :content
+		= f.text_field :content
+
+	%p= f.submit
+
+/ = form_for [@product, Picture.new] do |f|
+/ 	%p
+/ 		= f.file_field :attachment
+
+/ 	%p= f.submit
+= link_to 'Edit', edit_user_product_path(@product.user_id,@product.slugs)
+\|
+= link_to 'Back', user_products_path
+
+/ - if @product.avatar.present?
+= form_for [@user,@product] do |f|
+
+
+	= f.cropbox :avatar, :width => 500
+	%br
+	Cropped Image
+	= image_tag @product.avatar(:cropped)
+	= f.crop_preview :avatar
+	= f.submit 'Save'

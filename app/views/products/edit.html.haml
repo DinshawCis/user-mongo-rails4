@@ -1,0 +1,26 @@
+%h1 Editing product
+
+/ = render 'form'
+
+= simple_form_for [@user,@product] do |f|
+	.field
+		= f.input :name
+		/ = f.label :name
+		/ = f.text_field :name
+	.field
+		= f.input :description
+		/ = f.label :description
+		/ = f.text_field :description
+	.field
+		= f.input :price
+		/ = f.label :price
+		/ = f.text_field :price
+	.field
+		= f.file_field :avatar
+	.actions
+		= f.button :submit, "Save", :class => 'btn-primary'
+
+
+/ = link_to 'Show', @product
+/ \|
+/ = link_to 'Back', products_path

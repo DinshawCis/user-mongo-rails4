@@ -1,0 +1,17 @@
+= simple_form_for [@user, @product], :validate => true do |f|
+	= f.error_notification
+	.field
+		= f.input :name
+
+	.field
+		= f.input :description
+
+	.field
+		= f.input :price
+	/ .field
+	/   = f.file_field :avatar
+	.field
+		= f.file_field :avatar
+
+	.actions
+		= f.submit 'Save', :class => 'btn-primary'

@@ -1,0 +1,30 @@
+= form_tag user_products_path, :method => :get do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", :name => nil
+%h1 Listing products
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Price
+    %th
+    %th
+    %th
+
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.description
+      %td= product.price
+
+      %td= link_to 'Show',  user_product_path(@user,product.slugs)
+
+      %td= link_to 'Edit', edit_user_product_path(@user,product.slugs)
+
+      %td= link_to 'Destroy', user_product_path(@user,product.slugs), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Product', new_user_product_path(current_user)

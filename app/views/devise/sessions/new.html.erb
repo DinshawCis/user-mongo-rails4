@@ -1,0 +1,16 @@
+<h2>Sign in</h2>
+
+<%= simple_form_for(resource, as: resource_name, :validate => true, url: session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="form-inputs">
+    <%= f.input :email,   :validate => { :presence => true, :uniqueness => false} %>
+    <%= f.input :password, :validate => { :presence => true, :confirmation => false} %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

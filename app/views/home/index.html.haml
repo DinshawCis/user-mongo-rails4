@@ -1,0 +1,7 @@
+%h1 Welcome to app
+- if current_user.present?
+  %p Rate the products
+- else
+  %p Please register yourself to rate the products. And upload your products.
+%p
+  = image_tag ("img1.jpg")
