@@ -37,3 +37,7 @@ en:
           attributes:
             username:
               presence: "username can't be blank"
+            email:
+              presence: "email can't be blank"
+            password:
+              presence: "password can't be blank"
