@@ -196,9 +196,6 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-github (1.1.2)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -334,7 +331,6 @@ DEPENDENCIES
   moped!
   omniauth
   omniauth-facebook
-  omniauth-github
   omniauth-twitter
   paperclip!
   papercrop

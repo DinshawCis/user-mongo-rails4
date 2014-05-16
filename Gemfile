@@ -51,7 +51,7 @@ end
 # gem 'capistrano', group: :development
 gem 'devise'
 gem "omniauth"
-gem "omniauth-github"
+
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "bootstrap-sass", "~> 2.3.2.1"
